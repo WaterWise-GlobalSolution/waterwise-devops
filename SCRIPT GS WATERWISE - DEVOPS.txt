@@ -7,7 +7,7 @@ az group create --name rg-webapp-waterwise --location eastus2
 2. Configurar o SQL Server
 
 # Criar SQL Server
-az sql server create --resource-group rg-webapp-waterwise --name serversql-watewise --location eastus2 --admin-user sqladmin --admin-password Fiap@2ds2025
+az sql server create --resource-group rg-webapp-waterwise --name serversql-waterwise --location eastus2 --admin-user sqladmin --admin-password Fiap@2ds2025
  
 # Criar a base de dados
 az sql db create --resource-group rg-webapp-waterwise --server serversql-waterwise --name database-waterwise --service-objective S0
@@ -18,14 +18,25 @@ az sql server firewall-rule create --resource-group rg-webapp-waterwise --server
 3. Configurar o Azure Web App
 
 # Criar plano de serviço
-az appservice plan create --name plan-webapp-waterwise --resource-group rg-webapp-waterwise --sku FREE
+az appservice plan create --name plan-webapp-waterwise --resource-group rg-webapp-waterwise --sku F1
  
 # Criar o Web App
 az webapp create --resource-group rg-webapp-waterwise --plan plan-webapp-waterwise --name webapp-waterwise
  
 # Configurar string de conexão com o banco de dados
-az webapp config connection-string set \
-    --resource-group rg-webapp-waterwise \
-    --name webapp-waterwise \
-    --settings "DefaultConnection=Server=tcp:serversql-waterwise.database.windows.net,1433;Initial Catalog=database-waterwise;Persist Security Info=False;User ID=sqladmin;Password=Fiap@2ds2025;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" \
-    --connection-string-type SQLAzure
+az webapp config connection-string set --resource-group rg-webapp-waterwise --name webapp-waterwise --settings "DefaultConnection=Server=tcp:serversql-waterwise.database.windows.net,1433;Initial Catalog=database-waterwise;Persist Security Info=False;User ID=sqladmin;Password=Fiap@2ds2025;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" --connection-string-type SQLAzure
+
+
+# Atualizar aplication.proprieties
+
+# Banco SQL Server Azure
+spring.datasource.url=jdbc:sqlserver://serversql-waterwise.database.windows.net:1433;database=database-waterwise;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+spring.datasource.username=sqladmin
+spring.datasource.password=Fiap@2ds2025
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+# Atualizar pom.xml (plugins)
+
+
+mvn azure-webapp:deploy
