@@ -1,5 +1,12 @@
 SCRIPT GS WATERWISE - DEVOPS
 
+select * from [dbo].[gs_ww_produtor_rural];
+
+select * from [dbo].[gs_ww_propriedade_rural];
+
+
+
+
 1. Criar Grupo de Recursos
 
 az group create --name rg-webapp-waterwise --location eastus2
