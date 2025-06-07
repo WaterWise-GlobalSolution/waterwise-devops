@@ -138,7 +138,7 @@ mvn azure-webapp:deploy
  
 Após o deploy, a aplicação estará disponível em:
  
-- **Login**: https://webapp-odontofast.azurewebsites.net/login
+- **Login**: [https://webapp-odontofast.azurewebsites.net/login](https://webapp-waterwise.azurewebsites.net/login)
  
 ## Gerenciamento do Banco de Dados
  
