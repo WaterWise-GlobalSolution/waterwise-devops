@@ -153,7 +153,7 @@ Para acessar e gerenciar o banco de dados diretamente no Azure:
    - Senha: `Fiap@2ds2025`
 
 ## Vídeo Explicativo e Demonstrativo
-[Clique aqui]()
+[Clique aqui](https://www.youtube.com/watch?v=5g78-6TMEm0)
  
 ## FIAP: Global Solution
 A cada semestre desenvolvemos um projeto que integra todas as disciplinas do curso, com o objetivo de propor soluções para um tema de relevância global, promovido pela nossa instituição de ensino (FIAP).
