@@ -1,0 +1,5 @@
+# Created at 2025-06-04T00:30:34.887
+Boot Manifest-JAR contains absolute paths in classpath 'D:\FIAP\waterwise-java-spring-mvc\waterwise\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
