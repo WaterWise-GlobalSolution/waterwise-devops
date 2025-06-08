@@ -1,5 +1,7 @@
 # Ecossistema WaterWise
 
+"A enchente que alaga uma avenida pode começar com uma gota que o solo seco da zona rural não absorveu. Com WaterWise, cada metro de terra volta a ser uma esponja contra desastres."
+
 ## Visão Geral do Projeto
 
 A **WaterWise** é um ecossistema tecnológico integrado que previne enchentes urbanas através do monitoramento inteligente de propriedades rurais.
